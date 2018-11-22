@@ -7,6 +7,10 @@
     <groupId>cn.sibat</groupId>
     <artifactId>cas-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>cas-demo-01</module>
+    </modules>
 
 </project>

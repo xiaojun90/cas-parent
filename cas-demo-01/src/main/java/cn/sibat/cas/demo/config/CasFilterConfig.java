@@ -42,12 +42,12 @@ public class CasFilterConfig {
         FilterRegistrationBean authenticationFilter = new FilterRegistrationBean();
         authenticationFilter.setFilter(new AuthenticationFilter());
         Map<String,String> initParameters = new HashMap<>();
-        initParameters.put("casServerLoginUrl","http://xiaojun2.sibat.cn/cas/login");
-        initParameters.put("serverName", "http://xiaojun2.sibat.cn:8761/demo-01");
+        initParameters.put("casServerLoginUrl","http://xiaojun02.sibat.cn:8761/cas/login");
+        initParameters.put("serverName", "http://xiaojun02.sibat.cn:8762");
         authenticationFilter.setInitParameters(initParameters);
         authenticationFilter.setOrder(2);
         List<String> urlPatterns = new ArrayList<String>();
-        urlPatterns.add("/*");// 设置匹配的url
+        urlPatterns.add("/hello/*");// 设置匹配的url
         authenticationFilter.setUrlPatterns(urlPatterns);
         return authenticationFilter;
     }
@@ -62,12 +62,12 @@ public class CasFilterConfig {
         FilterRegistrationBean cas20ProxyReceivingTicketValidationFilter = new FilterRegistrationBean();
         cas20ProxyReceivingTicketValidationFilter.setFilter(new Cas20ProxyReceivingTicketValidationFilter());
         Map<String, String> initParameters = new HashMap<String, String>();
-        initParameters.put("casServerUrlPrefix", "http://xiaojun2.sibat.cn/cas");
-        initParameters.put("serverName", "http://xiaojun2.sibat.cn:8761/demo-01");
+        initParameters.put("casServerUrlPrefix", "http://xiaojun02.sibat.cn:8761/cas");
+        initParameters.put("serverName", "http://xiaojun02.sibat.cn:8762");
         cas20ProxyReceivingTicketValidationFilter.setInitParameters(initParameters);
         cas20ProxyReceivingTicketValidationFilter.setOrder(1);
         List<String> urlPatterns = new ArrayList<String>();
-        urlPatterns.add("/*");// 设置匹配的url
+        urlPatterns.add("/hello/*");// 设置匹配的url
         cas20ProxyReceivingTicketValidationFilter.setUrlPatterns(urlPatterns);
 
         return cas20ProxyReceivingTicketValidationFilter;
