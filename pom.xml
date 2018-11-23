@@ -11,6 +11,7 @@
 
     <modules>
         <module>cas-demo-01</module>
+        <module>cas-demo-02</module>
     </modules>
 
 </project>

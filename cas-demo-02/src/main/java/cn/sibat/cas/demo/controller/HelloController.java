@@ -1,7 +1,5 @@
 package cn.sibat.cas.demo.controller;
 
-import cn.hutool.core.util.StrUtil;
-import cn.hutool.crypto.digest.DigestUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,11 +19,6 @@ public class HelloController {
         Principal principal = request.getUserPrincipal();
         request.getSession().setAttribute("user", principal.getName());
         return "Hello " + principal.getName();
-    }
-
-    public static void main(String[] args) {
-        String password = DigestUtil.md5Hex("123456");
-        System.out.println(password);
     }
 
 }
